@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--        fx:controller="org.example.demo.HelloController"-->
+<SplitPane xmlns:fx="http://javafx.com/fxml" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
+    <items>
+        <VBox spacing="10">
+            <Label text="Patients" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="200.0">
+                <ListView fx:id="patientListView" />
+            </ScrollPane>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Patient ID:"/>
+                <TextField fx:id="patientIdTextField" GridPane.columnIndex="1"/>
+                <Label text="First Name:" GridPane.rowIndex="1"/>
+                <TextField fx:id="firstNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Last Name:" GridPane.rowIndex="2"/>
+                <TextField fx:id="lastNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Age:" GridPane.rowIndex="3"/>
+                <TextField fx:id="ageTextField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+            <HBox spacing="10">
+                <Button text="Add Patient" onAction="#onAddPatientClicked"/>
+                <Button text="Update Patient" onAction="#onUpdatePatientClicked"/>
+                <Button text="Delete Patient" onAction="#onDeletePatientClicked"/>
+            </HBox>
+        </VBox>
+        <VBox spacing="10">
+            <Label text="Appointments" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="200.0">
+                <ListView fx:id="appointmentListView" />
+            </ScrollPane>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Appointment ID:"/>
+                <TextField fx:id="appointmentIdTextField" GridPane.columnIndex="1"/>
+                <Label text="Purpose:" GridPane.rowIndex="1"/>
+                <TextField fx:id="purposeTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Date:" GridPane.rowIndex="2"/>
+                <DatePicker fx:id="appointmentDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Hour:" GridPane.rowIndex="3"/>
+                <TextField fx:id="appointmentHourTextField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+            <HBox spacing="10">
+                <Button text="Add Appointment" onAction="#onAddAppointmentClicked"/>
+                <Button text="Update Appointment" onAction="#onUpdateAppointmentClicked"/>
+                <Button text="Delete Appointment" onAction="#onDeleteAppointmentClicked"/>
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Appointments per Patient" onAction="#onShowAppointmentsPerPatient"/>
+                <Button text="Appointments per Month" onAction="#onShowAppointmentsPerMonth"/>
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Days Since Last Appointment" onAction="#onShowDaysSinceLastAppointment"/>
+                <Button text="Busiest Months" onAction="#onShowBusiestMonths"/>
+            </HBox>
+        </VBox>
+    </items>
+</SplitPane>
